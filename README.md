@@ -6,4 +6,4 @@ You just need to specify the path to one of the sequence files, the program will
 create a video file from all files of this sequence. 
 This application is present in two versions, a script without a GUI. And an application with an interface made using Qt QML.
 
-![Demonstration of the app]([name-of-giphy.gif](https://raw.githubusercontent.com/KovalevCG/sequence-to-video-converter/master/gifs/sequence_to_video_02.gif))
+![Demonstration of the app](https://raw.githubusercontent.com/KovalevCG/sequence-to-video-converter/master/gifs/sequence_to_video_02.gif)
