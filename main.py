@@ -78,7 +78,7 @@ class MainWindow(QObject):
             self.output_file_name = ''
             return
         else:
-            self.print_message =  'Sequence loaded'
+            self.print_message = 'Sequence loaded'
 
         print("self.sequence_path", self.sequence_path)
         print("self.sequence_folder", self.sequence_folder)
@@ -110,10 +110,10 @@ class MainWindow(QObject):
         self.sequence_file_name_suffix = self.sequence_file_name_suffix[::-1]
         self.sequence_file_name_prefix = self.sequence_file_name[:-(len(self.sequence_file_name_digits) + len(self.sequence_file_name_suffix))]
 
-        print ('self.sequence_file_name_prefix: ', self.sequence_file_name_prefix)
-        print ('len of self.sequence_file_name_digits: ', len(self.sequence_file_name_digits))
-        print ('self.sequence_file_name_digits: ', self.sequence_file_name_digits)
-        print ('self.sequence_file_name_suffix: ', self.sequence_file_name_suffix)
+        print('self.sequence_file_name_prefix: ', self.sequence_file_name_prefix)
+        print('len of self.sequence_file_name_digits: ', len(self.sequence_file_name_digits))
+        print('self.sequence_file_name_digits: ', self.sequence_file_name_digits)
+        print('self.sequence_file_name_suffix: ', self.sequence_file_name_suffix)
 
         # select sequence files by mask
         self.sequence_mask = self.sequence_file_name_prefix  +  '?'*len(self.sequence_file_name_digits)  +  self.sequence_file_name_suffix  +  '.' + self.sequence_extension
@@ -149,9 +149,9 @@ class MainWindow(QObject):
                 self.output_file_name = self.sequence_file_name_prefix
         else:
             if re.search('[-_.]', self.sequence_file_name_prefix[-1]) and re.search('[-_.]', self.sequence_file_name_suffix[0]):
-                self.output_file_name = self.sequence_file_name_prefix[:-1] + self.sequence_file_name_suffix + '.mp4'
+                self.output_file_name = self.sequence_file_name_prefix[:-1] + self.sequence_file_name_suffix
             else:
-                self.output_file_name = self.sequence_file_name_prefix + self.sequence_file_name_suffix + '.mp4'
+                self.output_file_name = self.sequence_file_name_prefix + self.sequence_file_name_suffix
 
     @Slot()
     def convert(self):
@@ -184,7 +184,7 @@ class MainWindow(QObject):
 
 
     @Slot(str)
-    def openFile(self,arg):
+    def openFile(self, arg):
         self.AssignSequenceVariables(arg[8:])
         self.pathsForUI()
 
