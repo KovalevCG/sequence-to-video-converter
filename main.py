@@ -28,16 +28,12 @@ class MainWindow(QObject):
         self.sequence_mask = ''
         self.output_file_name = ''
 
-
         # Paths and files
         if len(sys.argv) > 1:
             self.AssignSequenceVariables(sys.argv[1])
         else:
             #self.AssignSequenceVariables(os.path.join('Z:/personal/2001_SIM_BaloonCars/HOU/render/testTaxi02_30fps', 'testTaxi02.001.effectsResult.jpg'))
             self.print_message = 'Select one of the sequence files.'
-
-        # Emit UI path variables
-
 
     setSequence_mask = Signal(str)
     setSequence_folder = Signal(str)
@@ -169,7 +165,6 @@ class MainWindow(QObject):
         print('ffmpeg_start_number: ', self.ffmpeg_start_number)
         print('self.ffmpeg_exe_path: ', self.ffmpeg_exe_path)
 
-
         # run ffmpeg
         subprocess.call([self.ffmpeg_exe_path,
                          '-framerate',
@@ -181,7 +176,6 @@ class MainWindow(QObject):
                          '-vf',
                          'format=yuv420p',
                          self.ffmpeg_output])
-
 
     @Slot(str)
     def openFile(self, arg):
@@ -229,7 +223,6 @@ class MainWindow(QObject):
 
 
 if __name__ == "__main__":
-    # print("---------------============ START =================--------------------")
     app = QGuiApplication(sys.argv)
     engine = QQmlApplicationEngine()
 
